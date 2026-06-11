@@ -3,6 +3,9 @@ import com.cognizant.Adapter.AttendanceSystem;
 import com.cognizant.Adapter.Biometric;
 import com.cognizant.Builder.Student;
 import com.cognizant.Builder.StudentBuilder;
+import com.cognizant.Decorator.Coffee;
+import com.cognizant.Decorator.MilkDecorator;
+import com.cognizant.Decorator.SimpleCoffee;
 import com.cognizant.DependencyInjection.Laptop;
 import com.cognizant.DependencyInjection.Students;
 import com.cognizant.factorymethod.Carfactory;
@@ -13,9 +16,8 @@ import com.cognizant.factorymethod.Vehiclefactory;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Biometric biometric=new Biometric();
-        AttendanceSystem attendanceSystem=new AttendanceAdapter(biometric);
-        attendanceSystem.markattendance();
+        Coffee coffee=new MilkDecorator(new SimpleCoffee());
+        System.out.println(coffee.cost());
 
     }
 }
