@@ -1,12 +1,13 @@
-import com.cognizant.singleton.Singleton;
+import com.cognizant.factorymethod.Carfactory;
+import com.cognizant.factorymethod.Vehicle;
+import com.cognizant.factorymethod.Vehiclefactory;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Singleton s1=Singleton.getInstance();
-        Singleton s2=Singleton.getInstance();
-        s1.message();
-        s2.message();
+        Vehiclefactory factory=new Carfactory();
+        Vehicle vehicle=factory.createVehicle();
+        vehicle.drive();
     }
 }
