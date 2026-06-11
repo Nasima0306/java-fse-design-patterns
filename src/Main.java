@@ -4,8 +4,8 @@ import com.cognizant.singleton.Singleton;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Singleton s1=new Singleton();
-        Singleton s2=new Singleton();
+        Singleton s1=Singleton.getInstance();
+        Singleton s2=Singleton.getInstance();
         s1.message();
         s2.message();
     }
