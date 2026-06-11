@@ -1,3 +1,5 @@
+import com.cognizant.Builder.Student;
+import com.cognizant.Builder.StudentBuilder;
 import com.cognizant.factorymethod.Carfactory;
 import com.cognizant.factorymethod.Vehicle;
 import com.cognizant.factorymethod.Vehiclefactory;
@@ -6,8 +8,7 @@ import com.cognizant.factorymethod.Vehiclefactory;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Vehiclefactory factory=new Carfactory();
-        Vehicle vehicle=factory.createVehicle();
-        vehicle.drive();
+        Student student= new StudentBuilder().setName("Nasima").setAge(21).build();
+
     }
 }
