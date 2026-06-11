@@ -1,3 +1,6 @@
+import com.cognizant.Adapter.AttendanceAdapter;
+import com.cognizant.Adapter.AttendanceSystem;
+import com.cognizant.Adapter.Biometric;
 import com.cognizant.Builder.Student;
 import com.cognizant.Builder.StudentBuilder;
 import com.cognizant.DependencyInjection.Laptop;
@@ -10,11 +13,9 @@ import com.cognizant.factorymethod.Vehiclefactory;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Laptop lap=new Laptop();
-//   constructor injection     Students s1=new Sudents(lap);
-        Students s=new Students(); //setter injection
-        s.setter(lap);
-        s.study();
+        Biometric biometric=new Biometric();
+        AttendanceSystem attendanceSystem=new AttendanceAdapter(biometric);
+        attendanceSystem.markattendance();
 
     }
 }
