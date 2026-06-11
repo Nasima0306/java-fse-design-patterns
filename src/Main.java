@@ -8,6 +8,9 @@ import com.cognizant.Decorator.MilkDecorator;
 import com.cognizant.Decorator.SimpleCoffee;
 import com.cognizant.DependencyInjection.Laptop;
 import com.cognizant.DependencyInjection.Students;
+import com.cognizant.MVC.Controller;
+import com.cognizant.MVC.Model;
+import com.cognizant.MVC.View;
 import com.cognizant.factorymethod.Carfactory;
 import com.cognizant.factorymethod.Vehicle;
 import com.cognizant.factorymethod.Vehiclefactory;
@@ -16,8 +19,10 @@ import com.cognizant.factorymethod.Vehiclefactory;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Coffee coffee=new MilkDecorator(new SimpleCoffee());
-        System.out.println(coffee.cost());
+        Model model=new Model();
+        View view=new View();
+        Controller controller=new Controller(view,model);
+        controller.display();
 
     }
 }
