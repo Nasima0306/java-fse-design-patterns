@@ -1,0 +1,15 @@
+package com.cognizant.Observer;
+
+public class Main {
+    public static void main(String[] args) {
+        StockMarket market = new StockMarket();
+
+        Observer mobile = new MobileApp();
+        Observer web = new WebApp();
+
+        market.register(mobile);
+        market.register(web);
+
+        market.setStockPrice(1500);
+    }
+}
